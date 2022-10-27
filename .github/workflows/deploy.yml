@@ -5,14 +5,15 @@ on:
     branches: ["main"]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-18.04
     steps:
     - name: checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: s3 deploy
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      run: aws s3 sync . s3://lldblldblldb/path
+        AWS_REGION: ap-northeast-2
+      run: aws s3 sync . s3://lldblldblldb
