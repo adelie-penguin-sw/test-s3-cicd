@@ -2,7 +2,7 @@ name: s3-deploy
 
 on:
   push:
-    branches: ["dev"]
+    branches: ["main"]
 
 jobs:
   deploy:
