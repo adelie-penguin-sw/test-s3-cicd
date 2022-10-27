@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - name: checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v3
 
     - name: s3 deploy
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      run: aws s3 sync ./ s3://${{ secrets.BUKET }}
+      run: aws s3 cp ./ s3://${{ secrets.BUKET }}
