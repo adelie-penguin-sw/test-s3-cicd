@@ -3,6 +3,7 @@ name: s3-deploy
 on:
   push:
     branches: ["main", "dev"]
+  workflow_dispatch:
 
 jobs:
   build:
